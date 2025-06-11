@@ -1,0 +1,17 @@
+SELECT
+  v.GroupID,
+  v.CompanyName,
+  COUNT(*) AS COUNT
+
+FROM 
+  cb_vendorinformation v
+
+JOIN
+ maintable_P0JVM m ON v.GroupID = m.GroupID
+
+GROUP BY
+  v.GroupID, v.CompanyName
+
+ORDER BY
+  Count ASC,
+  v.GroupID DESC
